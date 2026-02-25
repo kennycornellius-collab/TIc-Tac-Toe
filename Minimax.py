@@ -58,9 +58,21 @@ def bestMove(board):
 board = [' '] * 9  
 
 while True:
-    print_board(board)
-
     
+    ai_move = bestMove(board)
+    board[ai_move] = 'X'
+    print(f"AI played at position {ai_move}")
+
+    if checkWIn(board):
+        print_board(board)
+        print("AI wins!")
+        break
+    if is_board_full(board):
+        print_board(board)
+        print("Draw!")
+        break
+
+    print_board(board)
     human_move = int(input("Your move (0-8): "))
     if board[human_move] != ' ':
         print("That cell is taken!")
@@ -76,15 +88,4 @@ while True:
         print("Draw!")
         break
     
-    ai_move = bestMove(board)
-    board[ai_move] = 'X'
-    print(f"AI played at position {ai_move}")
-
-    if checkWIn(board):
-        print_board(board)
-        print("AI wins!")
-        break
-    if is_board_full(board):
-        print_board(board)
-        print("Draw!")
-        break
+    
