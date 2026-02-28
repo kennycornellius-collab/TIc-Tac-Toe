@@ -82,7 +82,3 @@ The AI moves first. Enter a position from **0–8** when it's your turn, mapped 
 - Win/draw condition checking
 
 ---
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
